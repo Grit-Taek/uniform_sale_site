@@ -11,13 +11,13 @@ public class LoginService {
 
     private final MemberRepository memberRepository;
 
-    public Member login(String loginEmail, String password) {
-
-        return memberRepository.findByLoginEmail(loginEmail)
-                .filter(m -> m.getPassword().equals(password))
-                .orElse(null);
-
-
-    }
+//    public Member login(String loginEmail, String password) {
+//
+//        return memberRepository.findByLoginEmail(loginEmail)
+//                .filter(m -> m.getPassword().equals(password))
+//                .orElse(null);
+//
+//
+//    }
 
 }
