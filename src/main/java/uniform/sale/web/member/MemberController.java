@@ -1,4 +1,4 @@
-package uniform.sale.web;
+package uniform.sale.web.member;
 
 import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Controller;
@@ -26,11 +26,4 @@ public class MemberController {
         memberService.save(member);
         return "redirect:/";
     }
-
-    @GetMapping("/login")
-    public String loginMember() {
-        return "login.html";
-    }
-
-
 }

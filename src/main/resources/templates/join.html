@@ -41,34 +41,29 @@
 
         <form class="validation-form" action="/members/join"  method="post" novalidate>
           <div class="mb-3">
-            <label for="email">이메일</label>
-            <input type="email" class="form-control" id="email" placeholder="you@example.com" required>
+            <label>이메일</label>
+            <input type="email" class="form-control" name="email" placeholder="you@example.com" required>
             <div class="invalid-feedback">
               이메일을 입력해주세요.
             </div>
           </div>
 
           <div class="mb-3">
-            <label for="password">비밀번호</label>
-            <input type="text" class="form-control" id="password" placeholder="" value="" required>
+            <label>비밀번호</label>
+            <input type="text" class="form-control" name="password" placeholder="" value="" required>
             <div class="invalid-feedback">
               비밀번호를 입력해주세요.
             </div>
           </div>
 
           <div class="mb-3">
-            <label for="name">이름</label>
-            <input type="text" class="form-control" id="name" placeholder="" value="" required>
+            <label>이름</label>
+            <input type="text" class="form-control" name="name" placeholder="" value="" required>
             <div class="invalid-feedback">
               이름을 입력해주세요.
             </div>
           </div>
 
-          <hr class="mb-4">
-          <div class="custom-control custom-checkbox">
-            <input type="checkbox" class="custom-control-input" id="aggrement" required>
-            <label class="custom-control-label" for="aggrement">개인정보 수집 및 이용에 동의합니다.</label>
-          </div>
           <div class="mb-4"></div>
           <button class="btn btn-primary btn-lg btn-block" type="submit">가입 완료</button>
         </form>

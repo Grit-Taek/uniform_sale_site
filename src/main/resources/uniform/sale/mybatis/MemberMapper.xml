@@ -6,4 +6,9 @@
     <insert id="save" useGeneratedKeys="true" keyProperty="id">
         insert into Member (email,password,name) values (#{email},#{password},#{name})
     </insert>
+    <select id="findByEmail" resultType="Login">
+        select email, password
+        from member
+        where email = #{email}
+    </select>
 </mapper>
