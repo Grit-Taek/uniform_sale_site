@@ -10,6 +10,6 @@ import java.util.Optional;
 public interface MemberMapper {
 
     void save(Member member);
-    Login findByEmail(String email);
+    Member findByEmail(String email);
 
 }

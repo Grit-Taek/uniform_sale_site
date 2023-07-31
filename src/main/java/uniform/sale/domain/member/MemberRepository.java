@@ -16,8 +16,8 @@ public class MemberRepository {
         return member;
     }
 
-    public Login findByEmail(Login login) {
-        return memberMapper.findByEmail(login.getEmail());
+    public Member findByEmail(String memberEmail) {
+        return memberMapper.findByEmail(memberEmail);
 
     }
 

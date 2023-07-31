@@ -9,6 +9,9 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import uniform.sale.domain.login.Login;
 import uniform.sale.domain.login.LoginService;
 
+import javax.servlet.http.Cookie;
+import javax.servlet.http.HttpServletResponse;
+
 @Controller
 @RequiredArgsConstructor
 @RequestMapping("/members")
@@ -22,8 +25,10 @@ public class LoginController {
     }
 
     @PostMapping("/login")
-    public String login(@ModelAttribute Login login) {
-        loginService.login(login);
+    public String login(@ModelAttribute Login login, HttpServletResponse response) {
+        Login loginMember = loginService.login(login);
+        Cookie emailCookie = new Cookie("memberEmail", String.valueOf(loginMember.getEmail()));
+        response.addCookie(emailCookie);
         return "redirect:/";
 
     }
