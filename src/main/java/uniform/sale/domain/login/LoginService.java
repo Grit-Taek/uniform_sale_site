@@ -15,13 +15,7 @@ public class LoginService {
 
     public Login login(Login login) {
         Member findMember = memberRepository.findByEmail(login.getEmail());
-        String pwd = findMember.getPassword();
-        if (findMember.getPassword() == pwd) {
-            log.info("login succeed");
-            return login;
-        }
-
-        return login;
+        return new Login(findMember.getEmail(),findMember.getPassword());
 
     }
 

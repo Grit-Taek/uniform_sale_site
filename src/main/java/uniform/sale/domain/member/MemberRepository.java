@@ -2,7 +2,6 @@ package uniform.sale.domain.member;
 
 import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Repository;
-import uniform.sale.domain.login.Login;
 import uniform.sale.mybatis.MemberMapper;
 
 @Repository
