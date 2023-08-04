@@ -18,11 +18,15 @@ public class HomeController {
 
     @GetMapping("/")
     public String homeLogin(@CookieValue(name="memberEmail", required = false) String memberEmail, Model model) {
-        Member loginMember = memberRepository.findByEmail(memberEmail);
-        if (loginMember == null) {
+        log.info(memberEmail);
+        // why memberEmail is null?
+        if (memberEmail == null) {
+            log.info("tq11");
             return "home.html";
         }
+        Member loginMember = memberRepository.findByEmail(memberEmail);
         model.addAttribute("member",loginMember);
+        log.info("tq13331");
         return "loginHome.html";
     }
 }

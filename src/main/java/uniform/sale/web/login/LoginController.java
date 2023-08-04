@@ -31,10 +31,9 @@ public class LoginController {
     public String login(@ModelAttribute Login login, HttpServletResponse response) {
         Login loginMember = loginService.login(login);
         Cookie emailCookie = new Cookie("memberEmail", String.valueOf(loginMember.getEmail()));
+        log.info(loginMember.getEmail());
         response.addCookie(emailCookie);
-        log.info("tqtqtqtqtq");
-        return "redirect:/members/loginHome"; // 로그인홈으로 돌려야하는데ㅜ
-        // loginHome 타임리프랑하고도 호환도 안되는듯 ㅠ
+        return "redirect:/";
     }
 
 }
