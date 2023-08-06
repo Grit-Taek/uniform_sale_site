@@ -9,6 +9,9 @@ import org.springframework.web.bind.annotation.GetMapping;
 import uniform.sale.domain.member.Member;
 import uniform.sale.domain.member.MemberRepository;
 
+import javax.servlet.http.Cookie;
+import javax.servlet.http.HttpServletRequest;
+
 @Controller
 @Slf4j
 @RequiredArgsConstructor
@@ -18,15 +21,12 @@ public class HomeController {
 
     @GetMapping("/")
     public String homeLogin(@CookieValue(name="memberEmail", required = false) String memberEmail, Model model) {
-        log.info(memberEmail);
-        // why memberEmail is null?
+
         if (memberEmail == null) {
-            log.info("tq11");
             return "home.html";
         }
         Member loginMember = memberRepository.findByEmail(memberEmail);
         model.addAttribute("member",loginMember);
-        log.info("tq13331");
         return "loginHome.html";
     }
 }

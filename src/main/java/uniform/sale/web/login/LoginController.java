@@ -31,7 +31,7 @@ public class LoginController {
     public String login(@ModelAttribute Login login, HttpServletResponse response) {
         Login loginMember = loginService.login(login);
         Cookie emailCookie = new Cookie("memberEmail", String.valueOf(loginMember.getEmail()));
-        log.info(loginMember.getEmail());
+        emailCookie.setPath("/");
         response.addCookie(emailCookie);
         return "redirect:/";
     }
