@@ -6,6 +6,7 @@ import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
+import uniform.sale.domain.find.Find;
 import uniform.sale.domain.member.Member;
 import uniform.sale.domain.member.MemberService;
 
@@ -26,4 +27,6 @@ public class MemberController {
         memberService.save(member);
         return "redirect:/";
     }
+
+
 }

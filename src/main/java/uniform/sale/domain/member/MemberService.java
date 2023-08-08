@@ -9,9 +9,9 @@ public class MemberService {
 
     private final MemberRepository memberRepository;
 
-    public Member save(Member member) {
+    public void save(Member member) {
         memberRepository.save(member);
-        return member;
     }
+
 
 }
