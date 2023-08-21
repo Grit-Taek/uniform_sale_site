@@ -4,7 +4,7 @@
 
 <mapper namespace="uniform.sale.mybatis.MemberMapper">
     <insert id="save" useGeneratedKeys="true" keyProperty="id">
-        insert into Member (email,password,name) values (#{email},#{password},#{name})
+        insert into member (email,password,name) values (#{email},#{password},#{name})
     </insert>
     <select id="findByEmail" resultType="Member">
         select email, password, name
